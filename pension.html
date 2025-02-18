@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pension Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="pension.css">
+</head>
+<body>
+    <div class="pension-management-container">
+        <h1>Pension Management</h1>
+
+        <!-- Pension Overview -->
+        <div class="pension-overview">
+            <div class="pension-card">
+                <h2>Pension Overview</h2>
+                <div class="pension-details">
+                    <div class="detail">
+                        <strong>Pension Amount:</strong> $1200
+                    </div>
+                    <div class="detail">
+                        <strong>Pension Type:</strong> Monthly
+                    </div>
+                    <div class="detail">
+                        <strong>Status:</strong> Active
+                    </div>
+                    <div class="detail">
+                        <strong>Last Verification Date:</strong> 2025-01-10
+                    </div>
+                </div>
+                <button class="action-btn" id="edit-pension">Edit Pension</button>
+            </div>
+        </div>
+
+        <!-- Pension History Table -->
+        <div class="pension-history">
+            <h2>Pension History</h2>
+            <div class="history-actions">
+                <input type="text" id="pension-history-search" class="search-bar" placeholder="Search by date or amount">
+                <select id="status-filter" class="filter-dropdown">
+                    <option value="">Status</option>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                </select>
+            </div>
+            <table id="pension-history-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Reason for Change</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sample data rows -->
+                    <tr>
+                        <td>2025-01-01</td>
+                        <td>$1000</td>
+                        <td>Amount Increased</td>
+                        <td><button class="action-btn">Edit</button></td>
+                    </tr>
+                    <tr>
+                        <td>2025-01-10</td>
+                        <td>$1200</td>
+                        <td>Status Changed</td>
+                        <td><button class="action-btn">Edit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Add/Edit Pension Modal -->
+        <div id="edit-pension-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" id="close-modal">&times;</span>
+                <h2>Edit Pension</h2>
+                <form id="edit-pension-form">
+                    <label for="pension-amount">Amount:</label>
+                    <input type="number" id="pension-amount" required>
+
+                    <label for="pension-type">Pension Type:</label>
+                    <select id="pension-type" required>
+                        <option value="monthly">Monthly</option>
+                        <option value="quarterly">Quarterly</option>
+                    </select>
+
+                    <label for="pension-status">Status:</label>
+                    <select id="pension-status" required>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+
+                    <button type="submit" class="action-btn">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="pension.js"></script>
+</body>
+</html>

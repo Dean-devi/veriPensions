@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior Citizen Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="senior.css">
+</head>
+<body>
+    <div class="management-container">
+        <h1>Senior Citizen Management</h1>
+
+        <!-- Search and Filter Section -->
+        <div class="search-filter-section">
+            <input type="text" id="search-bar" class="search-bar" placeholder="Search by Name or ID...">
+            <div class="filter-options">
+                <select id="pension-status" class="filter-dropdown">
+                    <option value="">Pension Status</option>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                    <option value="pending">Pending</option>
+                </select>
+                <select id="verification-status" class="filter-dropdown">
+                    <option value="">Verification Status</option>
+                    <option value="success">Success</option>
+                    <option value="failure">Failure</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Action Buttons Section -->
+        <div class="action-buttons">
+            <button class="action-btn" id="add-senior">Add Senior Citizen</button>
+            <button class="action-btn" id="bulk-update">Bulk Update Status</button>
+        </div>
+
+        <!-- Data Table Section -->
+        <div class="table-section">
+            <table id="senior-citizen-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Pension Status</th>
+                        <th>Verification Status</th>
+                        <th>Last Verification Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sample data rows -->
+                    <tr>
+                        <td><a href="#" class="name-link">John Doe</a></td>
+                        <td class="status active">Active</td>
+                        <td class="verification success">Success</td>
+                        <td>2025-01-15</td>
+                        <td>
+                            <button class="action-btn">Edit</button>
+                            <button class="action-btn">View Details</button>
+                            <button class="action-btn">Start Verification</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#" class="name-link">Jane Smith</a></td>
+                        <td class="status inactive">Inactive</td>
+                        <td class="verification failure">Failure</td>
+                        <td>2025-01-10</td>
+                        <td>
+                            <button class="action-btn">Edit</button>
+                            <button class="action-btn">View Details</button>
+                            <button class="action-btn">Start Verification</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination Section -->
+        <div class="pagination">
+            <button class="pagination-btn">Previous</button>
+            <button class="pagination-btn">Next</button>
+        </div>
+    </div>
+
+    <script src="senior.js"></script>
+</body>
+</html>

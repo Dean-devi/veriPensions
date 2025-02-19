@@ -1,26 +1,35 @@
-// dashboard.js
-
 document.addEventListener("DOMContentLoaded", () => {
-  // Initialize charts using Chart.js
-  const pensionPieChart = document.getElementById("pensionPieChart");
-  const verificationLineChart = document.getElementById("verificationLineChart");
-  const pensionClaimedChart = document.getElementById("pensionClaimedChart");
+  // Get values from the cards
+  const enrolledCount = parseInt(document.getElementById("enrolled-count").textContent);
+  const activePensions = parseInt(document.getElementById("active-pensions").textContent);
+  const pendingVerifications = parseInt(document.getElementById("pending-verifications").textContent);
+  const smsSent = parseInt(document.getElementById("sms-sent").textContent);
 
-  // Dummy Pie Chart for pension breakdown
+  // Pie Chart for Pension Breakdown
+  const pensionPieChart = document.getElementById("pensionPieChart");
   new Chart(pensionPieChart, {
     type: "pie",
     data: {
-      labels: ["Active", "Inactive", "Pending"],
+      labels: ["Active Pensions", "Inactive Pensions", "Pending Verifications"],
       datasets: [
         {
-          data: [60, 25, 15],
+          data: [activePensions, enrolledCount - activePensions, pendingVerifications],
           backgroundColor: ["#0d6efd", "#dc3545", "#ffc107"],
         },
       ],
     },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: "top",
+        },
+      },
+    },
   });
 
-  // Dummy Line Chart for Biometric Verifications over 4 weeks
+  // Line Chart for Biometric Verifications
+  const verificationLineChart = document.getElementById("verificationLineChart");
   new Chart(verificationLineChart, {
     type: "line",
     data: {
@@ -36,17 +45,23 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     options: {
       responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
     },
   });
 
-  // New Dummy Line Chart for Pension Claimed by Month/Year
+  // Line Chart for Pension Claims
+  const pensionClaimedChart = document.getElementById("pensionClaimedChart");
   new Chart(pensionClaimedChart, {
     type: "line",
     data: {
       labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
       datasets: [
         {
-          label: "Pension Claimed",
+          label: "Pension Claims",
           data: [500, 600, 550, 700, 800, 750, 850, 900, 950, 1000, 980, 1020],
           borderColor: "#28a745",
           backgroundColor: "rgba(40, 167, 69, 0.1)",

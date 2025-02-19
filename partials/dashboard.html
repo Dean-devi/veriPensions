@@ -79,10 +79,6 @@
     .quick-action .action-btn {
       width: 100%;
     }
-    /* New spacing for the Pension Claimed chart */
-    #pensionClaimedChart {
-      margin-top: 2rem;
-    }
   </style>
 </head>
 <body>
@@ -122,9 +118,11 @@
     <!-- Graph Section -->
     <div class="graph-section">
       <div class="charts">
+        <!-- Pie Chart for Pension Breakdown -->
         <canvas id="pensionPieChart"></canvas>
+        <!-- Line Chart for Biometric Verifications -->
         <canvas id="verificationLineChart" class="mt-4"></canvas>
-        <!-- New Line Chart for Pension Claimed -->
+        <!-- Line Chart for Pension Claims -->
         <canvas id="pensionClaimedChart" class="mt-4"></canvas>
       </div>
       <!-- Quick Actions -->

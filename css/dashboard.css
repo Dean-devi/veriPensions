@@ -1,0 +1,85 @@
+/* dashboard.css */
+
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Metrics Overview */
+.metrics-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.metric-card {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.metric-card .icon {
+  margin-bottom: 0.5rem;
+}
+
+.metric-card h3 {
+  color: #0d6efd;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.metric-card p {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Graph Section */
+.graph-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.charts {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Ensure canvas elements have height */
+canvas {
+  width: 100% !important;
+  height: 300px;  /* Adjust height as needed */
+  border-radius: 10px;
+}
+
+/* Quick Actions */
+.quick-actions {
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.quick-action .action-btn {
+  width: 100%;
+}
+
+/* Extra spacing for the Pension Claimed chart */
+#pensionClaimedChart {
+  margin-top: 2rem;
+}

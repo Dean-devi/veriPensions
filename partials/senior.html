@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Senior Citizen Management</title>
+
+  <!-- Google Fonts (Roboto) -->
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" 
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.css" />
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fa;
+    }
+    .management-container {
+      padding: 2rem;
+    }
+    .search-filter-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .filter-options {
+      display: flex;
+      gap: 1rem;
+    }
+    .table-section {
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+    .pagination {
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="management-container">
+    <h1 class="text-primary mb-4">Senior Citizen Management</h1>
+
+    <!-- Search and Filter Section -->
+    <div class="search-filter-section">
+      <input 
+        type="text" 
+        id="search-bar" 
+        class="form-control w-auto" 
+        placeholder="Search by Name or ID..."
+      />
+      <div class="filter-options">
+        <select id="pension-status" class="form-select">
+          <option value="">Pension Status</option>
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+          <option value="pending">Pending</option>
+        </select>
+        <select id="verification-status" class="form-select">
+          <option value="">Verification Status</option>
+          <option value="success">Success</option>
+          <option value="failure">Failure</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Action Buttons Section -->
+    <div class="mb-3">
+      <button class="btn btn-primary me-2" id="add-senior">Add Senior Citizen</button>
+      <button class="btn btn-secondary" id="bulk-update">Bulk Update Status</button>
+    </div>
+
+    <!-- Data Table Section -->
+    <div class="table-section">
+      <table class="table table-bordered table-hover" id="senior-citizen-table">
+        <thead class="table-light">
+          <tr>
+            <th>Name</th>
+            <th>Pension Status</th>
+            <th>Verification Status</th>
+            <th>Last Verification Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Sample data rows -->
+          <tr>
+            <td><a href="#" class="text-decoration-none">John Doe</a></td>
+            <td class="status text-success">Active</td>
+            <td class="verification text-success">Success</td>
+            <td>2025-01-15</td>
+            <td>
+              <button class="btn btn-sm btn-outline-primary">Edit</button>
+              <button class="btn btn-sm btn-outline-info">View</button>
+              <button class="btn btn-sm btn-outline-success">Verify</button>
+            </td>
+          </tr>
+          <tr>
+            <td><a href="#" class="text-decoration-none">Jane Smith</a></td>
+            <td class="status text-danger">Inactive</td>
+            <td class="verification text-danger">Failure</td>
+            <td>2025-01-10</td>
+            <td>
+              <button class="btn btn-sm btn-outline-primary">Edit</button>
+              <button class="btn btn-sm btn-outline-info">View</button>
+              <button class="btn btn-sm btn-outline-success">Verify</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pagination Section -->
+    <div class="pagination">
+      <button class="btn btn-outline-primary me-2">Previous</button>
+      <button class="btn btn-outline-primary">Next</button>
+    </div>
+  </div>
+
+  <script src="js/senior.js"></script>
+</body>
+</html>

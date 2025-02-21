@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Store user session
             $_SESSION['userID'] = $user['userID'];
             $_SESSION['fullname'] = $user['fullname'];
-            header("Location: home.php");
+            header("Location: ../ryan/sidenavbar.html");
             exit();
         } else {
             echo "Invalid username or password!";

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - VeriPension</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <h2 class="sidebar-title">VeriPension Admin</h2>
+        <ul class="sidebar-menu">
+            <li><a href="#" class="nav-link active" data-section="dashboard"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+            <li><a href="#" class="nav-link" data-section="senior-management"><i class="fas fa-users"></i> Senior Management</a></li>
+            <li><a href="#" class="nav-link" data-section="biometric-verification"><i class="fas fa-fingerprint"></i> Biometric Verification</a></li>
+            <li><a href="#" class="nav-link" data-section="pension-management"><i class="fas fa-money-check-alt"></i> Pension Management</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="content-section active">
+            <div class="dashboard-container">
+                <div class="metrics-overview">
+                    <div class="metric-card">
+                        <div class="icon"><i class="fas fa-users fa-2x text-primary"></i></div>
+                        <h3>Senior Citizens Enrolled</h3>
+                        <p id="enrolled-count">3100</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="icon"><i class="fas fa-money-check-alt fa-2x text-success"></i></div>
+                        <h3>Active Pensions</h3>
+                        <p id="active-pensions">2000</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="icon"><i class="fas fa-fingerprint fa-2x text-warning"></i></div>
+                        <h3>Pending Biometric Verifications</h3>
+                        <p id="pending-verifications">120</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="icon"><i class="fas fa-sms fa-2x text-info"></i></div>
+                        <h3>SMS Notifications Sent</h3>
+                        <p id="sms-sent">5000</p>
+                    </div>
+                </div>
+
+                <div class="graph-section">
+                    <div class="charts">
+                        <canvas id="pensionPieChart"></canvas>
+                        <canvas id="verificationLineChart" class="mt-4"></canvas>
+                        <canvas id="pensionClaimedChart" class="mt-4"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Senior Citizen Management Section -->
+        <section id="senior-management" class="content-section">
+            <div class="management-container">
+                <h1 class="text-primary mb-4">Senior Citizen Management</h1>
+                <div class="search-filter-section">
+                    <input type="text" id="search-bar" class="form-control" placeholder="Search by Name or ID...">
+                    <select id="pension-status" class="form-select">
+                        <option value="">Pension Status</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                        <option value="pending">Pending</option>
+                    </select>
+                    <select id="verification-status" class="form-select">
+                        <option value="">Verification Status</option>
+                        <option value="success">Success</option>
+                        <option value="failure">Failure</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" id="add-senior">Add Senior Citizen</button>
+                <table class="table table-bordered" id="senior-citizen-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Pension Status</th>
+                            <th>Verification Status</th>
+                            <th>Last Verification Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td class="text-success">Active</td>
+                            <td class="text-success">Success</td>
+                            <td>2025-01-15</td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                <button class="btn btn-sm btn-outline-info">View</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Biometric Verification Section -->
+        <section id="biometric-verification" class="content-section">
+            <div class="verification-container">
+                <h1 class="text-primary mb-4">Biometric Verification</h1>
+                <button class="btn btn-primary" id="initiate-verification">Initiate Verification</button>
+                <table class="table table-bordered" id="verification-logs-table">
+                    <thead>
+                        <tr>
+                            <th>Senior Name</th>
+                            <th>Verification Date</th>
+                            <th>Result</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>2025-01-12</td>
+                            <td class="text-danger">Failure</td>
+                            <td><button class="btn btn-sm btn-outline-warning">Reverify</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Pension Management Section -->
+        <section id="pension-management" class="content-section">
+            <div class="pension-management-container">
+                <h1 class="text-primary mb-4">Pension Management</h1>
+                <div class="pension-overview">
+                    <div class="pension-card">
+                        <h2 class="text-secondary">Pension Overview</h2>
+                        <p><strong>Amount:</strong> $1200</p>
+                        <p><strong>Type:</strong> Monthly</p>
+                        <p><strong>Status:</strong> <span class="text-success">Active</span></p>
+                        <button class="btn btn-primary" id="edit-pension">Edit Pension</button>
+                    </div>
+                </div>
+                <table class="table table-bordered" id="pension-history-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Reason for Change</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2025-01-01</td>
+                            <td>$1000</td>
+                            <td>Amount Increased</td>
+                            <td><button class="btn btn-sm btn-outline-primary">Edit</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="adminT.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/biometric.js"></script>
+    <script src="js/pension.js"></script>
+    <script src="js/sms.js"></script>
+    <script src="js/senior.js"></script>
+    <script src="js/sms.js"></script>
+  
+</body>
+</html>

@@ -17,12 +17,12 @@
             <h2>Admin Panel</h2>
         </div>
         <ul class="nav-list">
-            <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
-            <li><a href="senior.html"><i class="fas fa-user"></i> Senior Citizens</a></li>
-            <li><a href="biometric.html"><i class="fas fa-fingerprint"></i> Biometric Verification</a></li>
-            <li><a href="pension.html"><i class="fas fa-wallet"></i> Pension Records</a></li>
-            <li><a href="sms.html"><i class="fas fa-envelope"></i> SMS Notifications</a></li>
-            <li><a href="admin.html"><i class="fas fa-user-cog"></i> Admin Profile</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" data-page="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" data-page="senior.html"><i class="fas fa-users"></i> Senior Citizens</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" data-page="biometric.html"><i class="fas fa-fingerprint"></i> Biometric Verification</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" data-page="pension.html"><i class="fas fa-file-invoice-dollar"></i> Pension Records</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" data-page="sms.html"><i class="fas fa-sms"></i> SMS Notifications</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" data-page="partials/user.html"><i class="fas fa-user-cog"></i> Admin Profile</a></li>
         </ul>
     </div>
 
@@ -56,13 +56,37 @@
             </div>
         </header>
 
-        <!-- Page Content -->
-        <div class="page-content">
+        <!-- Dynamic Page Content -->
+        <div id="content">
             <h1>Welcome to Admin Dashboard</h1>
             <p>Manage everything from here.</p>
         </div>
     </div>
 
-    <script src="sidenavbar.js"></script>
+    <script>
+        // Sidebar Navigation - Load pages dynamically
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const page = this.getAttribute('data-page');
+
+                fetch(page)
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('content').innerHTML = data;
+                    })
+                    .catch(error => console.error('Error loading page:', error));
+            });
+        });
+
+        // Digital Clock
+        function updateDateTime() {
+            const now = new Date();
+            document.getElementById("datetime").textContent = now.toLocaleString();
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    </script>
+
 </body>
 </html>

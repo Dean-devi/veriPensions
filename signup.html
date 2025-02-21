@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ryan/signup.css">
+</head>
+<body>
+    <div class="glassmorphism">
+        <div class="form-container">
+            <h2>Sign up</h2>
+            
+            <!-- Fake Inputs to Prevent Autofill -->
+            <input type="text" name="fakeuser" style="display: none;">
+            <input type="password" name="fakepass" style="display: none;">
+
+            <form id="signupForm" autocomplete="off">
+                <div class="relative">
+                    <input type="text" id="username" placeholder="Username" autocomplete="off">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="relative">
+                    <input type="email" id="email" placeholder="Email" autocomplete="off">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="relative">
+                    <input type="text" id="phone" placeholder="+63" autocomplete="off">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="relative">
+                    <input type="password" id="password" placeholder="Password" autocomplete="new-password">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="relative">
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" autocomplete="new-password">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <button type="submit">SIGN UP</button>
+            </form>
+            <p>Already have an account? <a href="login.html">Log in.</a></p>
+        </div>
+        <div class="image-container">
+            <img src="../img/logo2.jpg" alt="Illustration">
+        </div>
+    </div>
+
+    <script src="ryan/signup.js"></script>
+</body>
+</html>

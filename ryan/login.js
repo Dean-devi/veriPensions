@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-document.querySelector("form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent actual form submission
-    window.location.href = "sidenavbar.html"; // Redirect to sidenavbar.html after login
-});
+// document.querySelector("form").addEventListener("submit", function(event) {
+//     event.preventDefault(); // Prevent actual form submission
+//     window.location.href = "sidenavbar.html"; // Redirect to sidenavbar.html after login
+// });

@@ -1,6 +1,6 @@
 <?php
 session_start();
-// include "db.php";
+include "backend/db.php";
 
 // Check if user is already logged in
 if (isset($_SESSION['userID'])) {
@@ -79,7 +79,7 @@ if (isset($_SESSION['userID'])) {
           <h2 id="form-title" class="text-center">Login</h2>
 
           <!-- LOGIN FORM -->
-          <form action="loginAuth.php" method="POST" id="login-form">
+          <form action="backend/loginAuth.php" method="POST" id="login-form">
             <div class="form-floating mb-3">
               <input 
                 type="text" 
@@ -112,7 +112,7 @@ if (isset($_SESSION['userID'])) {
           </form>
 
           <!-- REGISTRATION FORM (hidden by default) -->
-          <form action="userAuth.php" method="POST" id="registration-form" style="display: none;">
+          <form action="backend/userAuth.php" method="POST" id="registration-form" style="display: none;">
             <div class="form-floating mb-3">
               <input 
                 type="text" 

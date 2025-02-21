@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biometric Verification</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="biometric.css">
+</head>
+<body>
+    <div class="verification-container">
+        <h1>Biometric Verification</h1>
+
+        <!-- Initiate Verification Button -->
+        <div class="initiate-verification">
+            <button class="action-btn" id="initiate-verification">Initiate Verification</button>
+        </div>
+
+        <!-- Search and Filter Section -->
+        <div class="search-filter-section">
+            <input type="text" id="verification-search" class="search-bar" placeholder="Search by Name or ID...">
+            <div class="filter-options">
+                <input type="date" id="start-date" class="filter-dropdown">
+                <input type="date" id="end-date" class="filter-dropdown">
+                <select id="verification-result" class="filter-dropdown">
+                    <option value="">Result</option>
+                    <option value="success">Success</option>
+                    <option value="failure">Failure</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Verification Logs Table -->
+        <div class="log-section">
+            <table id="verification-logs-table">
+                <thead>
+                    <tr>
+                        <th>Senior Name</th>
+                        <th>Verification Date</th>
+                        <th>Result</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sample data rows -->
+                    <tr>
+                        <td><a href="#" class="name-link">Dean Sivert</a></td>
+                        <td>2025-01-10</td>
+                        <td class="result success">Success</td>
+                        <td><button class="action-btn">Reverify</button></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#" class="name-link">Dean Isiah</a></td>
+                        <td>2025-01-12</td>
+                        <td class="result failure">Failure</td>
+                        <td><button class="action-btn">Reverify</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination Section -->
+        <div class="pagination">
+            <button class="pagination-btn">Previous</button>
+            <button class="pagination-btn">Next</button>
+        </div>
+    </div>
+
+    <script src="biometric.js"></script>
+</body>
+</html>

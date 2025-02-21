@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Notification Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sms.css">
+</head>
+<body>
+    <div class="sms-notification-container">
+        <h1>SMS Notification Management</h1>
+
+        <!-- Send SMS Button -->
+        <button class="action-btn" id="send-sms">Send SMS</button>
+
+        <!-- SMS Log Table -->
+        <div class="sms-log-table">
+            <h2>SMS Log</h2>
+            <div class="log-actions">
+                <input type="text" id="sms-search" class="search-bar" placeholder="Search by name or date">
+                <select id="status-filter" class="filter-dropdown">
+                    <option value="">Status</option>
+                    <option value="sent">Sent</option>
+                    <option value="failed">Failed</option>
+                </select>
+            </div>
+            <table id="sms-log-table">
+                <thead>
+                    <tr>
+                        <th>Senior Name</th>
+                        <th>Message Content</th>
+                        <th>Sent Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sample data rows -->
+                    <tr>
+                        <td>Dean Sivert</td>
+                        <td>This is a test message content.</td>
+                        <td>2025-02-10</td>
+                        <td><span class="status-sent">Sent</span></td>
+                    </tr>
+                    <tr>
+                        <td>Dean Isiah</td>
+                        <td>Reminder: Your pension is ready.</td>
+                        <td>2025-02-12</td>
+                        <td><span class="status-failed">Failed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Send SMS Modal -->
+        <div id="send-sms-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" id="close-modal">&times;</span>
+                <h2>Send SMS</h2>
+                <form id="send-sms-form">
+                    <label for="recipient">Recipient:</label>
+                    <select id="recipient" multiple required>
+                        <!-- Sample senior citizens -->
+                        <option value="Dean">Dean Sivert</option>
+                        <option value="Dean">Dean Isiah</option>
+                        <option value="Ryan">Ryan</option>
+                    </select>
+
+                    <label for="message-content">Message Content:</label>
+                    <textarea id="message-content" required placeholder="Enter message here"></textarea>
+
+                    <button type="submit" class="action-btn">Send SMS</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="sms.js"></script>
+</body>
+</html>

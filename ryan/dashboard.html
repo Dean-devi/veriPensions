@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="dashboard.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="metrics-overview">
+            <div class="metric-card">
+                <i class="fas fa-users"></i>
+                <h3>Senior Citizens Enrolled</h3>
+                <p>3500</p>
+            </div>
+            <div class="metric-card">
+                <i class="fas fa-wallet"></i>
+                <h3>Active Pensions</h3>
+                <p>2000</p>
+            </div>
+            <div class="metric-card">
+                <i class="fas fa-fingerprint"></i>
+                <h3>Pending Biometric Verifications</h3>
+                <p>120</p>
+            </div>
+            <div class="metric-card">
+                <i class="fas fa-envelope"></i>
+                <h3>SMS Notifications Sent</h3>
+                <p>5000</p>
+            </div>
+        </div>
+
+        <div class="graph-section">
+            <div class="piechart-labels">
+                <div class="piechart-label"><span style="background:#FFD700;"></span> Senior Citizens</div>
+                <div class="piechart-label"><span style="background:#FF5733;"></span> Active Pensions</div>
+                <div class="piechart-label"><span style="background:#28A745;"></span> Pending Verifications</div>
+                <div class="piechart-label"><span style="background:#17A2B8;"></span> SMS Sent</div>
+            </div>
+
+            <div class="charts">
+                <canvas id="pensionPieChart"></canvas>
+                <canvas id="verificationLineChart"></canvas>
+            </div>
+
+            <div class="quick-actions">
+                <button class="action-btn">Send SMS</button>
+                <button class="action-btn">Start Verification</button>
+                <button class="action-btn">Update Pension Status</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

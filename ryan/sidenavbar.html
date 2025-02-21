@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="sidenavbar.css">
+</head>
+<body>
+
+    <!-- Side Navigation Bar -->
+    <div class="side-nav">
+        <div class="logo">
+            <img src="C:\Users\Ryan\Downloads\wmremove-transformed (3)_Nero AI_Photo_Face_Nero_AI_Background_Remover.png" alt="Profile" class="profile-img">
+            <h2>Admin Panel</h2>
+        </div>
+        <ul class="nav-list">
+            <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="senior.html"><i class="fas fa-user"></i> Senior Citizens</a></li>
+            <li><a href="biometric.html"><i class="fas fa-fingerprint"></i> Biometric Verification</a></li>
+            <li><a href="pension.html"><i class="fas fa-wallet"></i> Pension Records</a></li>
+            <li><a href="sms.html"><i class="fas fa-envelope"></i> SMS Notifications</a></li>
+            <li><a href="admin.html"><i class="fas fa-user-cog"></i> Admin Profile</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="datetime-container">
+                <div class="clock">
+                    <svg id="analogClock" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" fill="white" stroke="black" stroke-width="2"/>
+                        <line id="hour-hand" x1="50" y1="50" x2="50" y2="30" stroke="black" stroke-width="3" stroke-linecap="round"/>
+                        <line id="minute-hand" x1="50" y1="50" x2="50" y2="20" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                        <line id="second-hand" x1="50" y1="50" x2="50" y2="15" stroke="red" stroke-width="1.5" stroke-linecap="round"/>
+                        <circle cx="50" cy="50" r="2" fill="black"/>
+                    </svg>
+                </div>
+                <div class="digital-clock">
+                    <strong>Current Date and Time:</strong> <span id="datetime">Loading...</span>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <div class="user-menu">
+                    <span class="user-email">ryan@gmail.com ▼</span>
+                    <ul class="dropdown">
+                        <li><a href="admin.html" onclick="goToProfile()"><i class="fas fa-user-circle"></i> Profile</a></li>
+                        <li><a href="login.html" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <!-- Page Content -->
+        <div class="page-content">
+            <h1>Welcome to Admin Dashboard</h1>
+            <p>Manage everything from here.</p>
+        </div>
+    </div>
+
+    <script src="sidenavbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+  }
+  h1 {
+    color: #150050!important;
+  }
+  .management-container {
+    padding: 2rem;
+  }
+  .search-filter-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .filter-options {
+    display: flex;
+    gap: 1rem;
+  }
+  .table-section {
+    overflow-x: auto;
+    margin-top: 1rem;
+  }
+  .pagination {
+    margin-top: 1rem;
+  }
+
+
+/* pensioner.php */
+  .pension-management-container {
+    padding: 2rem;
+  }
+  .pension-overview {
+    margin-bottom: 2rem;
+  }
+  .pension-card {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .pension-history {
+    margin-top: 2rem;
+  }
+  .history-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 9999; 
+    left: 0; 
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    max-width: 500px;
+    position: relative;
+  }
+  .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+
+  /* user.php */
+
+  .profile-management-container {
+    padding: 2rem;
+  }
+  .profile-card {
+    display: flex;
+    gap: 1rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    align-items: center;
+  }
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #0d6efd;
+  }
+  .profile-info {
+    flex: 1;
+  }
+  .activity-log, .permissions-roles {
+    margin-top: 2rem;
+  }
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 9999; 
+    left: 0; 
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    max-width: 500px;
+    position: relative;
+  }
+  .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+
+  /* Biometric.php */
+
+  .verification-container {
+    padding: 2rem;
+  }
+  .initiate-verification {
+    margin-bottom: 1rem;
+  }
+  .search-filter-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .log-section {
+    margin-top: 1rem;
+    overflow-x: auto;
+  }
+  .pagination {
+    margin-top: 1rem;
+  }
+
+
+  /* report.php */
+
+
+  /* sms.php */
+  .sms-notification-container {
+    padding: 2rem;
+  }
+  .sms-log-table {
+    margin-top: 2rem;
+  }
+  .log-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 9999; 
+    left: 0; 
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    max-width: 500px;
+    position: relative;
+  }
+  .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  .status-sent {
+    color: #0d6efd;
+    font-weight: bold;
+  }
+  .status-failed {
+    color: #dc3545;
+    font-weight: bold;
+  }

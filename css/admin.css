@@ -1,0 +1,87 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+  }
+
+  .sidebar {
+    width: 250px;
+    background-color: #fff;
+    min-height: 100vh;
+    border-right: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 1rem;
+  }
+
+  .sidebar .logo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .nav-link {
+    padding: 0.75rem 1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .nav-link:hover {
+    background-color: #150050;
+    color: #fff !important;
+  }
+
+  .main-content {
+    margin-left: 250px;
+  }
+
+  .top-header {
+    background-color: #150050;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .top-header .user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .theme-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .logout-btn {
+    margin-left: auto;
+    background-color: #dc3545;
+    border: none;
+    padding: 0.5rem 1rem;
+    color: white;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+
+  .logout-btn:hover {
+    background-color: #bb2d3b;
+  }
+
+  .page-content {
+    padding: 1rem;
+  }
